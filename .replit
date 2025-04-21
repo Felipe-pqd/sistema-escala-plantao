@@ -1,0 +1,23 @@
+run = "npm start"
+language = "nodejs"
+entrypoint = "server.js"
+
+[env]
+PORT = "3000"
+
+[packager]
+language = "nodejs"
+  [packager.features]
+  packageSearch = true
+  guessImports = true
+  enabledForHosting = false
+
+[unitTest]
+language = "nodejs"
+
+[nix]
+channel = "stable-22_11"
+
+[deployment]
+run = ["sh", "-c", "npm start"]
+deploymentTarget = "cloudrun"
